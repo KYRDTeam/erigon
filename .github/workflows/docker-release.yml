@@ -11,7 +11,7 @@ on:
  
 jobs:
   prepare:
-    runs-on: [arc-kyrd-runner, size-m]
+    runs-on: [linux]
     outputs:
       current_branch: ${{ steps.current_branch.outputs.value }}
       head_sha: ${{ steps.head_sha.outputs.value }}
@@ -57,7 +57,7 @@ jobs:
           echo "::set-output name=branch_tag::$branch_tag-$short_sha"  
       
   build:
-    runs-on: [arc-kyrd-runner, size-m]
+    runs-on: [linux]
     strategy:
       matrix:
         include:
